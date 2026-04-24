@@ -28,10 +28,31 @@ At each of the 200 time steps, three phases are applied synchronously:
 
 ```
 simulator.py                      # Python implementation of the model
-data/
+code/
+  data_cleaner.py                 # Converts observed .csv to .npy
+  data_generator.py               # Simulates 10000 replicates and store as .npy
+  helper.py                       # General utility functions, including plotting
+  naive_abc.py                    # Rejection ABC with initial summary statistics (3)
+  naive_improv_B.py               # Rejection ABC with 4 summary statistics (naive_abc + 1)
+  naive_improv_R.py               # Rejection ABC with 6 summary statistics (naive_improv_B + 2)
+  posterior_predictor.py          # Generates simulated data for PPC plots
+  reg_adj.py                      # Rejection ABC with regression adjustment
+  simulator.py                    # Moved inside simply for convenience
+data_obs/
   infected_timeseries.csv         # Fraction infected over time (40 replicates)
   rewiring_timeseries.csv         # Rewiring counts over time (40 replicates)
   final_degree_histograms.csv     # Degree distribution at t=200 (40 replicates)
+  infected.npy                    # Cleaned up fraction infected over time
+  rewired.npy                     # Cleaned up rewiring counts over time
+  degrees.npy                     # Cleaned up degree distribution at t=200
+data_sim/
+  beta.npy                        # Simulated beta (10000 replicates)
+  degree_sim.npy                  # Simulated degree distribution at t=200 (10000 replicates)
+  gamma.npy                       # Simulated gamma (10000 replicates)
+  infected_sim.npy                # Simulated fraction infected over time (10000 replicates)
+  rewire_sim.npy                  # Simulated rewiring counts over time (10000 replicates)
+  rho.npy                         # Simulated rho (10000 replicates)
+img/...                           # Generated plots; "posteriors" for parameter posterior + pairwise correlation, "ppc" for posterior predictive check
 ```
 
 ## Simulator usage
