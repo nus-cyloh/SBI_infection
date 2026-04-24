@@ -27,7 +27,6 @@ At each of the 200 time steps, three phases are applied synchronously:
 ## Repository contents
 
 ```
-simulator.py                      # Python implementation of the model
 code/
   data_cleaner.py                 # Converts observed .csv to .npy
   data_generator.py               # Simulates 10000 replicates and store as .npy
@@ -37,7 +36,7 @@ code/
   naive_improv_R.py               # Rejection ABC with 6 summary statistics (naive_improv_B + 2)
   posterior_predictor.py          # Generates simulated data for PPC plots
   reg_adj.py                      # Rejection ABC with regression adjustment
-  simulator.py                    # Moved inside simply for convenience
+  simulator.py                    # Python implementation of the model; moved inside simply for convenience
 data_obs/
   infected_timeseries.csv         # Fraction infected over time (40 replicates)
   rewiring_timeseries.csv         # Rewiring counts over time (40 replicates)
