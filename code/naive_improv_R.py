@@ -1,6 +1,6 @@
 """
 Naive ABC rejection algorithm with additional summary
-statistic to improve beta
+statistic to improve gamma and rho
 """
 
 import numpy as np
